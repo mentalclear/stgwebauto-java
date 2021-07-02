@@ -25,20 +25,18 @@ public class Challenge2 {
     }
 
     @Test(priority = 1)
-    public void openCopart() {
-        driver.get("https://copart.com");
+    public void openCopartAndVerifyLocation() {
+        driver.navigate().to("https://copart.com");
+        Assert.assertEquals(driver.getTitle(),
+                "Salvage Cars for Sale | Online Used Car Auctions - Copart Auto Auction");
     }
 
-    @Test(priority = 2)
-    public void verifyLocationCopart() {
-        Assert.assertEquals(driver.getTitle(), "Salvage Cars for Sale | Online Used Car Auctions - Copart Auto Auction");
-    }
-
+    // Challenge 2: write a script that will go to copart.com, search for exotics and verify porsche
+    // is in the list of cars.  Use the hard assertion for this challenge.
     @Test(priority = 3)
     public void searchForPorscheInExotics() {
         WebElement searchBar = driver.findElement(By.xpath("//input[@id='input-search']"));
         WebElement searchButton = driver.findElement(By.xpath("//button[@class='btn btn-default search-icon']"));
-        WebElement searchResultHeader;
         String searchResultHeaderTerm = "//h1[@id='searchResultsHeader' and @data-uname='searchResultsHeader']";
 
         searchBar.click();
@@ -47,7 +45,7 @@ public class Challenge2 {
         searchButton.click();
 
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchResultHeaderTerm)));
-        searchResultHeader = driver.findElement(By.xpath(searchResultHeaderTerm));
+        WebElement searchResultHeader = driver.findElement(By.xpath(searchResultHeaderTerm));
         Assert.assertTrue(searchResultHeader.getText().contains("Search Results for exotics"));
 
         List<WebElement> exoticsSearchResults = driver.findElements(By.xpath("//span[@data-uname='lotsearchLotmake']"));
