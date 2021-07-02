@@ -54,7 +54,7 @@ public class Challenge3 {
             makeUrls.put(element.getText(), element.getAttribute("href"));
         }
         for (Map.Entry<String,String> singleEntry : makeUrls.entrySet()) {
-            System.out.println(singleEntry.getKey() +" - "+ singleEntry.getValue());
+            System.out.println(singleEntry.getKey().toUpperCase() + " - " + singleEntry.getValue());
         }
     }
 
