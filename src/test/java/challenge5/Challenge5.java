@@ -1,18 +1,20 @@
-package challenge2;
+package challenge5;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class Challenge2 {
+public class Challenge5 {
     public WebDriver driver;
     public WebDriverWait driverWait;
 
@@ -40,23 +42,31 @@ public class Challenge2 {
         String searchResultHeaderTerm = "//h1[@id='searchResultsHeader' and @data-uname='searchResultsHeader']";
 
         searchBar.click();
-        searchBar.sendKeys("exotics");
+        searchBar.sendKeys("porsche");
         searchButton.click();
 
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchResultHeaderTerm)));
         WebElement searchResultHeader = driver.findElement(By.xpath(searchResultHeaderTerm));
-        Assert.assertTrue(searchResultHeader.getText().contains("Search Results for exotics"));
+        Assert.assertTrue(searchResultHeader.getText().contains("Search Results for "));
 
-        List<WebElement> exoticsSearchResults = driver.findElements(By.xpath("//span[@data-uname='lotsearchLotmake']"));
-        List<String> listOfFundExotics = new ArrayList<>();
-        for (WebElement singleResult : exoticsSearchResults) {
-            listOfFundExotics.add(singleResult.getText());
+        WebElement itemsPerPage = driver.findElement(By.xpath("//select[@name='serverSideDataTable_length']"));
+        Select select = new Select(itemsPerPage);
+        select.selectByVisibleText("100");
+
+        driverWait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//div[@class='dataTables_info'][1]"),"Showing 1 to 100 "));
+        List<WebElement> porscheResultModels = driver.findElements(By.xpath("//span[@data-uname='lotsearchLotmodel']"));
+        Set<String> porscheModels = new HashSet<>();
+        for(WebElement model : porscheResultModels) {
+            if(model.getText().equals("")) continue;
+            porscheModels.add(model.getText());
         }
-        Assert.assertTrue(listOfFundExotics.contains("PORSCHE"));
+
+
+        System.out.println("Total Porsche models on the page: " + porscheModels.size());
     }
 
     @AfterSuite
     public void stopSuite() {
-        driver.quit();
+        //driver.quit();
     }
 }
