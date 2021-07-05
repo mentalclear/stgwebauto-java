@@ -1,22 +1,24 @@
-package challenge5;
+package stg.challenges;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import stg.utils.Helpers;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Challenge5 {
     public WebDriver driver;
     public WebDriverWait driverWait;
+    public Helpers helpers;
 
     @BeforeSuite
     public void startSuite() {
@@ -24,6 +26,7 @@ public class Challenge5 {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driverWait = new WebDriverWait(driver, 10);
+        helpers = new Helpers();
     }
 
     @Test(priority = 1)
@@ -33,9 +36,8 @@ public class Challenge5 {
                 "Salvage Cars for Sale | Online Used Car Auctions - Copart Auto Auction");
     }
 
-    // Challenge 2: write a script that will go to copart.com, search for exotics and verify porsche
-    // is in the list of cars.  Use the hard assertion for this challenge.
-    @Test(priority = 3)
+    // Challenge 5:
+    @Test(priority = 2)
     public void searchForPorscheInExotics() {
         WebElement searchBar = driver.findElement(By.xpath("//input[@id='input-search']"));
         WebElement searchButton = driver.findElement(By.xpath("//button[@class='btn btn-default search-icon']"));
@@ -45,7 +47,7 @@ public class Challenge5 {
         searchBar.sendKeys("porsche");
         searchButton.click();
 
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchResultHeaderTerm)));
+        helpers.waitForSpinnerToClose(driverWait);
         WebElement searchResultHeader = driver.findElement(By.xpath(searchResultHeaderTerm));
         Assert.assertTrue(searchResultHeader.getText().contains("Search Results for "));
 
@@ -53,20 +55,26 @@ public class Challenge5 {
         Select select = new Select(itemsPerPage);
         select.selectByVisibleText("100");
 
-        driverWait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//div[@class='dataTables_info'][1]"),"Showing 1 to 100 "));
+        helpers.waitForSpinnerToClose(driverWait);
         List<WebElement> porscheResultModels = driver.findElements(By.xpath("//span[@data-uname='lotsearchLotmodel']"));
+        List<String>listOfModels = porscheResultModels.stream().map(WebElement::getText).sorted().collect(Collectors.toList());
         Set<String> porscheModels = new HashSet<>();
         for(WebElement model : porscheResultModels) {
             if(model.getText().equals("")) continue;
             porscheModels.add(model.getText());
         }
-
-
+        System.out.println("PART 1: MODELS");
         System.out.println("Total Porsche models on the page: " + porscheModels.size());
+        System.out.println("Quantity for each model: ");
+        for(String model : porscheModels){
+            System.out.println(model + " - " + Collections.frequency(listOfModels, model));
+        }
     }
+
+
 
     @AfterSuite
     public void stopSuite() {
-        //driver.quit();
+        driver.quit();
     }
 }

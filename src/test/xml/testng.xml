@@ -3,17 +3,22 @@
 <suite name="Certification" verbose="1" >
     <test name="Challenge1">
         <classes>
-            <class name="challenge1.Challenge1"/>
+            <class name="stg.challenges.Challenge1"/>
         </classes>
     </test>
     <test name="Challenge2">
         <classes>
-            <class name="challenge2.Challenge2"/>
+            <class name="stg.challenges.Challenge2"/>
         </classes>
     </test>
     <test name="Challenge3">
         <classes>
-            <class name="challenge3.Challenge3"/>
+            <class name="stg.challenges.Challenge3"/>
+        </classes>
+    </test>
+    <test name="Challenge4">
+        <classes>
+            <class name="stg.challenges.Challenge4"/>
         </classes>
     </test>
 </suite>

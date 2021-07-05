@@ -1,4 +1,4 @@
-package challenge4;
+package stg.challenges;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
