@@ -21,7 +21,8 @@ public class Challenge2 {
         System.setProperty("webdriver.chrome.driver", "./bin/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driverWait = new WebDriverWait(driver, 10);
+        //  driver.manage().timeouts().implicitlyWait(10, SECONDS);  # Implicit wait example.
+        driverWait = new WebDriverWait(driver, 10);   // Explicit wait
     }
 
     @Test(priority = 1)

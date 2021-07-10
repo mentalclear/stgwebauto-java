@@ -38,7 +38,7 @@ public class Challenge5 {
 
     // Challenge 5:
     @Test(priority = 2)
-    public void searchForPorscheInExotics() {
+    public void searchForPorscheModels() {
         WebElement searchBar = driver.findElement(By.xpath("//input[@id='input-search']"));
         WebElement searchButton = driver.findElement(By.xpath("//button[@class='btn btn-default search-icon']"));
         String searchResultHeaderTerm = "//h1[@id='searchResultsHeader' and @data-uname='searchResultsHeader']";
@@ -54,8 +54,12 @@ public class Challenge5 {
         WebElement itemsPerPage = driver.findElement(By.xpath("//select[@name='serverSideDataTable_length']"));
         Select select = new Select(itemsPerPage);
         select.selectByVisibleText("100");
-
         helpers.waitForSpinnerToClose(driverWait);
+    }
+
+    @Test(priority = 3)
+    public void countPorscheModels() {
+        System.out.println("\nPART 1: MODELS");
         List<WebElement> porscheResultModels = driver.findElements(By.xpath("//span[@data-uname='lotsearchLotmodel']"));
         List<String>listOfModels = porscheResultModels.stream().map(WebElement::getText).sorted().collect(Collectors.toList());
         Set<String> porscheModels = new HashSet<>();
@@ -63,7 +67,7 @@ public class Challenge5 {
             if(model.getText().equals("")) continue;
             porscheModels.add(model.getText());
         }
-        System.out.println("PART 1: MODELS");
+
         System.out.println("Total Porsche models on the page: " + porscheModels.size());
         System.out.println("Quantity for each model: ");
         for(String model : porscheModels){
@@ -71,7 +75,32 @@ public class Challenge5 {
         }
     }
 
-
+    @Test(priority = 4)
+    public void countPorscheDamages(){
+        System.out.println("\nPART 2: DAMAGES");
+        List<WebElement> porscheResultDamages = driver.findElements(By.xpath("//span[@data-uname='lotsearchLotdamagedescription']"));
+        List<String> listOfDamages = porscheResultDamages.stream().map(WebElement::getText).sorted().collect(Collectors.toList());
+        Set<String> setOfDamages = new HashSet<>();
+        for (WebElement damage : porscheResultDamages){
+            if(damage.getText().equals("")) continue;
+            setOfDamages.add(damage.getText());
+        }
+        System.out.println("Quantity of each damage:");
+        int miscDamages = 0;
+        for(String damage : setOfDamages){
+            switch (damage) {
+                case "FRONT END":
+                case "REAR END":
+                case "MINOR DENT/SCRATCHES":
+                case "UNDERCARRIAGE":
+                    System.out.println(damage + " - " + Collections.frequency(listOfDamages, damage));
+                    break;
+                default:
+                    miscDamages += Collections.frequency(listOfDamages, damage);
+            }
+        }
+        System.out.println("MISC - " + miscDamages);
+    }
 
     @AfterSuite
     public void stopSuite() {
