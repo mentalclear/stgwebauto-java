@@ -1,11 +1,8 @@
 package stg.challenges;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -13,8 +10,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import stg.utils.Helpers;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Challenge6 {
     public WebDriver driver;
@@ -55,7 +54,7 @@ public class Challenge6 {
     }
 
     @Test(priority = 3)
-    public void selectModelSkyline() {
+    public void selectModelSkyline() throws IOException {
         String modelInQuestion = "Skyline";
         WebElement modelToggle = driver.findElement(By.xpath("//a[@data-uname='ModelFilter']"));
         modelToggle.click();
@@ -67,16 +66,28 @@ public class Challenge6 {
         try {
             nissanSkylineCheckbox = driver.findElement(By.xpath("//abbr[contains(text(),'Skyline')]"));
             nissanSkylineCheckbox.click();
+            System.out.println("Model " + modelInQuestion + " found...");
+            Assert.assertTrue(nissanSkylineCheckbox.getText().contains(modelInQuestion));
         } catch (NoSuchElementException e) {
+            System.out.println("Model " + modelInQuestion + " not found" );
+            takeScreenshot("./report/screenshots/image" + addTimeStamp() + ".png");
             e.getMessage();
         }
-
     }
 
+    private String addTimeStamp() {
+        LocalDateTime localTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy_hh-mm-ss");
+        return localTime.format(formatter);
+    }
 
+    private void takeScreenshot(String screenshotPath) throws IOException {
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File(screenshotPath));
+    }
 
     @AfterSuite
     public void stopSuite() {
-        //driver.quit();
+        driver.quit();
     }
 }
