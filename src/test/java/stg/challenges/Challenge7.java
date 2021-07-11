@@ -14,6 +14,8 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static stg.utils.Helpers.waitForSpinnerToClose;
+
 public class Challenge7 {
     public WebDriver driver;
     public WebDriverWait driverWait;
@@ -35,15 +37,13 @@ public class Challenge7 {
 
     // Challenge 7
     @Test(priority = 2)
-    public void printListOfPopularModels() {
+    public void verifyLinksOfPopularModels() {
         String modelsSectionHeader = "//h2[@class='bold text-center blue-heading section-header']";
         String modelsTabHeader = "//a[@data-toggle='tab' and @href='#tabModels']";
         String modelItemElement = "//div[@id='tabModels']//span[@class='items']//a";
 
-        driverWait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath(modelsSectionHeader)));
-        WebElement popularVehicles = driver.findElement(
-                By.xpath(modelsSectionHeader));
+        driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(modelsSectionHeader)));
+        WebElement popularVehicles = driver.findElement(By.xpath(modelsSectionHeader));
         Assert.assertEquals(popularVehicles.getText(), "Copart Auto Auction - Salvage & Used Cars for Sale");
 
         WebElement modelsTab = driver.findElement(By.xpath(modelsTabHeader));
@@ -57,31 +57,25 @@ public class Challenge7 {
             modelUrls.get(i).add(modelsList.get(i).getText());
             modelUrls.get(i).add(modelsList.get(i).getAttribute("href"));
         }
-        for(List<String> model : modelUrls) {
-            System.out.println(model);
+
+        String modelNameToCheck, modelLinkToCheck;
+        WebElement searchPageTitle;
+        for (List<String> modelUrl : modelUrls) {
+            modelNameToCheck = modelUrl.get(0);
+            modelLinkToCheck = modelUrl.get(1);
+            driver.navigate().to(modelLinkToCheck);
+
+            waitForSpinnerToClose(driverWait);
+            searchPageTitle = driver.findElement(By.xpath("//span[@ng-bind-html='header | to_trusted']"));
+            Assert.assertEquals(searchPageTitle.getText(),
+                    "Used, Wholesale and Salvage " + modelNameToCheck + " Vehicles for Sale");
         }
-
-        // TODO Continue with Assertions for the Challenge.
-
-/*  Piece of code for reference purpose - will clean up after.
-         modelUrls.get(modelUrls.indexOf(element)).add(element.getText());
-                    modelUrls.get(modelUrls.indexOf(element)).add(element.getAttribute("href"));
-
-
-        Map<String, String> modelUrls = new HashMap<>();
-        for (WebElement element : modelsList) {
-            if(element.getText().contains("VIEW MORE")) continue;
-            modelUrls.put(element.getText(), element.getAttribute("href"));
-        }
-        for (Map.Entry<String,String> singleEntry : modelUrls.entrySet()) {
-            System.out.println(singleEntry.getKey().toUpperCase() + " - " + singleEntry.getValue());
-        }
-
-*/
     }
+
+    // The above test fails. Because of an actual bug on the copart.com - Chrysler Town & Country link is broken.
 
     @AfterSuite
     public void stopSuite() {
-        driver.quit();
+       driver.quit();
     }
 }

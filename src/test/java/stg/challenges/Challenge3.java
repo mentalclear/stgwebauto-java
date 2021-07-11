@@ -34,26 +34,27 @@ public class Challenge3 {
                 "Salvage Cars for Sale | Online Used Car Auctions - Copart Auto Auction");
     }
 
-    /* Challenge 3: Go to copart and print a list of all the “Popular Items” of vehicle Make/Models on the home page
-       and the URL/href for each type. This list can dynamically change depending on what is authored by the content
-       creator but using a loop will make sure that everything will be displayed regardless of the list size. */
+    // Challenge 3
     @Test(priority = 2)
-    public void printListOfPopularMakes() {
-        String makesSectionHeader = "//h2[@class='bold text-center blue-heading section-header']";
+    public void printListOfPopularModels() {
+        String modelsSectionHeader = "//h2[@class='bold text-center blue-heading section-header']";
 
         driverWait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath(makesSectionHeader)));
+                By.xpath(modelsSectionHeader)));
         WebElement popularVehicles = driver.findElement(
-                By.xpath(makesSectionHeader));
+                By.xpath(modelsSectionHeader));
         Assert.assertEquals(popularVehicles.getText(), "Copart Auto Auction - Salvage & Used Cars for Sale");
 
-        List<WebElement> makesList = driver.findElements(By.xpath("//span[@class='make-items']//a"));
-        Map<String, String> makeUrls = new HashMap<>();
-        for (WebElement element : makesList) {
+        WebElement modelsTab = driver.findElement(By.xpath("//a[@data-toggle='tab' and @href='#tabModels']"));
+        modelsTab.click();
+
+        List<WebElement> modelsList = driver.findElements(By.xpath("//span[@class='items']//a"));
+        Map<String, String> modelUrls = new HashMap<>();
+        for (WebElement element : modelsList) {
             if(element.getText().contains("VIEW MORE")) continue;
-            makeUrls.put(element.getText(), element.getAttribute("href"));
+            modelUrls.put(element.getText(), element.getAttribute("href"));
         }
-        for (Map.Entry<String,String> singleEntry : makeUrls.entrySet()) {
+        for (Map.Entry<String,String> singleEntry : modelUrls.entrySet()) {
             System.out.println(singleEntry.getKey().toUpperCase() + " - " + singleEntry.getValue());
         }
     }
