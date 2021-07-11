@@ -70,20 +70,9 @@ public class Challenge6 {
             Assert.assertTrue(nissanSkylineCheckbox.getText().contains(modelInQuestion));
         } catch (NoSuchElementException e) {
             System.out.println("Model " + modelInQuestion + " not found" );
-            takeScreenshot("./report/screenshots/image" + addTimeStamp() + ".png");
+            helpers.takeScreenshot(driver,"./report/screenshots/image" + helpers.addTimeStamp() + ".png");
             e.getMessage();
         }
-    }
-
-    private String addTimeStamp() {
-        LocalDateTime localTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy_hh-mm-ss");
-        return localTime.format(formatter);
-    }
-
-    private void takeScreenshot(String screenshotPath) throws IOException {
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(screenshotPath));
     }
 
     @AfterSuite
