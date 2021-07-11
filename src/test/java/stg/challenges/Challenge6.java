@@ -10,14 +10,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import stg.utils.Helpers;
 
 import java.io.IOException;
+
+import static stg.utils.Helpers.*;
 
 public class Challenge6 {
     public WebDriver driver;
     public WebDriverWait driverWait;
-    public Helpers helpers;
 
     @BeforeSuite
     public void startSuite() {
@@ -25,7 +25,6 @@ public class Challenge6 {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driverWait = new WebDriverWait(driver, 10);
-        helpers = new Helpers();
     }
 
     @Test(priority = 1)
@@ -47,7 +46,7 @@ public class Challenge6 {
         searchBar.sendKeys(searchTerm);
         searchButton.click();
 
-        helpers.waitForSpinnerToClose(driverWait);
+        waitForSpinnerToClose(driverWait);
         WebElement searchResultHeader = driver.findElement(By.xpath(searchResultHeaderTerm));
         Assert.assertTrue(searchResultHeader.getText().contains("Search Results for " + searchTerm));
     }
@@ -69,7 +68,7 @@ public class Challenge6 {
             Assert.assertTrue(nissanSkylineCheckbox.getText().contains(modelInQuestion));
         } catch (NoSuchElementException e) {
             System.out.println("Model " + modelInQuestion + " not found" );
-            helpers.takeScreenshot(driver,"./report/screenshots/image" + helpers.addTimeStamp() + ".png");
+            takeScreenshot(driver,"./report/screenshots/image" + addTimeStamp() + ".png");
             e.getMessage();
         }
     }
