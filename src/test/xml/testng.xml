@@ -36,4 +36,9 @@
             <class name="stg.challenges.Challenge7"/>
         </classes>
     </test>
+    <test name="Challenge8">
+        <classes>
+            <class name="stg.challenges.Challenge8"/>
+        </classes>
+    </test>
 </suite>
