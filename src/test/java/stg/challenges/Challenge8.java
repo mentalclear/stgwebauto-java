@@ -45,8 +45,17 @@ public class Challenge8 {
                 "Lamborghini Urus"
         ));
         for (String model : modelsList) {
+           Assert.assertEquals(testForServerResponse(model), 200);
            Assert.assertTrue(resultRequestToFile(model).isFile());
         }
+    }
+
+    private int testForServerResponse(String searchQuery) {
+        return Unirest.post("https://www.copart.com/public/lots/search")
+                .header("accept", "application/json")
+                .queryString("query", searchQuery)
+                .asEmpty()
+                .getStatus();
     }
 
     public File resultRequestToFile(String searchQuery) {
