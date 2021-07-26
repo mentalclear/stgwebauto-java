@@ -1,6 +1,9 @@
 package stg.challenges;
 
+import io.restassured.http.Cookies;
+import io.restassured.response.ValidatableResponse;
 import kong.unirest.Unirest;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,13 +16,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
-public class Challenge9 {
+import static io.restassured.RestAssured.given;
+
+public class Challenge9RATest {
     public WebDriver driver;
     public WebDriverWait driverWait;
-
-    // Challenge 9 for Advanced STG certification
-    // Using Unirest here.
 
     @BeforeSuite
     public void startSuite() {
@@ -29,8 +32,31 @@ public class Challenge9 {
         driverWait = new WebDriverWait(driver, 10);
     }
 
-    @Test(priority = 1)
-    public void logModelResponseBodyToFile()  {
+    @Test (priority = 1)
+    public void testCopartResponses() {
+        driver.get("https://copart.com");
+        Set<Cookie> seleniumCookies = driver.manage().getCookies();
+        List<io.restassured.http.Cookie> restAssuredCookies = new ArrayList<>();
+        for (org.openqa.selenium.Cookie cookie : seleniumCookies) {
+            restAssuredCookies.add(new io.restassured.http.Cookie.Builder(cookie.getName(), cookie.getValue()).build());
+        }
+
+        String endpointURL = "https://www.copart.com/public/lots/search";
+        ValidatableResponse response = given()
+                .cookies(new Cookies(restAssuredCookies))
+                .header("accept", "application/json")
+                .queryParam("query", "Toyota Camry")
+                .when()
+                .post(endpointURL)
+                .then();
+
+        response.log().body();
+    }
+
+
+
+    //@Test(priority = 1)
+    public void logModelResponseBodyToFile() {
         String endpointURL = "https://www.copart.com/public/lots/search";
 
         driver.get("https://copart.com");
@@ -87,7 +113,7 @@ public class Challenge9 {
         return result;
     }
 
-    public void verifyingTheResponse(String searchQuery, String endpoint) {
+    public void verifyingTheResponse(String searchQuery, String endpoint)  {
         String result = Unirest.post(endpoint)
                 .header("accept", "application/json")
                 .queryString("query", searchQuery)
@@ -111,6 +137,6 @@ public class Challenge9 {
     @AfterSuite
     public void stopSuite() {
        driver.quit();
-       Unirest.shutDown();
+       //Unirest.shutDown();
     }
 }
