@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class Challenge5 {
     public WebDriver driver;
     public WebDriverWait driverWait;
-    public Helpers helpers;
 
     @BeforeSuite
     public void startSuite() {
@@ -26,7 +25,6 @@ public class Challenge5 {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driverWait = new WebDriverWait(driver, 10);
-        helpers = new Helpers();
     }
 
     @Test(priority = 1)
@@ -47,14 +45,14 @@ public class Challenge5 {
         searchBar.sendKeys("porsche");
         searchButton.click();
 
-        helpers.waitForSpinnerToClose(driverWait);
+        Helpers.waitForSpinnerToClose(driverWait);
         WebElement searchResultHeader = driver.findElement(By.xpath(searchResultHeaderTerm));
         Assert.assertTrue(searchResultHeader.getText().contains("Search Results for "));
 
         WebElement itemsPerPage = driver.findElement(By.xpath("//select[@name='serverSideDataTable_length']"));
         Select select = new Select(itemsPerPage);
         select.selectByVisibleText("100");
-        helpers.waitForSpinnerToClose(driverWait);
+        Helpers.waitForSpinnerToClose(driverWait);
     }
 
     @Test(priority = 3)

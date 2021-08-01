@@ -51,10 +51,10 @@ public class Challenge3 {
         List<WebElement> modelsList = driver.findElements(By.xpath("//span[@class='items']//a"));
         Map<String, String> modelUrls = new HashMap<>();
         for (WebElement element : modelsList) {
-            if(element.getText().contains("VIEW MORE")) continue;
             modelUrls.put(element.getText(), element.getAttribute("href"));
         }
         for (Map.Entry<String,String> singleEntry : modelUrls.entrySet()) {
+            if(singleEntry.getValue().contains("rentals")) continue;
             System.out.println(singleEntry.getKey().toUpperCase() + " - " + singleEntry.getValue());
         }
     }
