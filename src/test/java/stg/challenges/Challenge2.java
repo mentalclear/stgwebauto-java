@@ -29,7 +29,7 @@ public class Challenge2 {
     public void openCopartAndVerifyLocation() {
         driver.navigate().to("https://copart.com");
         Assert.assertEquals(driver.getTitle(),
-                "Salvage Cars for Sale | Online Used Car Auctions - Copart Auto Auction");
+                "Copart USA - Online Live Vehicle Auctions - Bid & Win");
     }
 
     // Challenge 2: write a script that will go to copart.com, search for exotics and verify porsche

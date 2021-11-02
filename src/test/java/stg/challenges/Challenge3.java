@@ -31,7 +31,7 @@ public class Challenge3 {
     public void openCopartAndVerifyLocation() {
         driver.navigate().to("https://copart.com");
         Assert.assertEquals(driver.getTitle(),
-                "Salvage Cars for Sale | Online Used Car Auctions - Copart Auto Auction");
+                "Copart USA - Online Live Vehicle Auctions - Bid & Win");
     }
 
     // Challenge 3
@@ -43,7 +43,7 @@ public class Challenge3 {
                 By.xpath(modelsSectionHeader)));
         WebElement popularVehicles = driver.findElement(
                 By.xpath(modelsSectionHeader));
-        Assert.assertEquals(popularVehicles.getText(), "Copart Auto Auction - Salvage & Used Cars for Sale");
+        Assert.assertEquals(popularVehicles.getText(), "Copart Auto Auction - Used & Repairable Cars for Sale");
 
         WebElement modelsTab = driver.findElement(By.xpath("//a[@data-toggle='tab' and @href='#tabModels']"));
         modelsTab.click();

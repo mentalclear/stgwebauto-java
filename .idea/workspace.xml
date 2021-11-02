@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c75c561-71d8-4aa2-b0e9-cd80721b2dd9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/bin/chromedriver" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stg/challenges/Challenge2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stg/challenges/Challenge2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stg/challenges/Challenge3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stg/challenges/Challenge3.java" afterDir="false" />
+    </list>
+    <list id="8728f6f5-d52b-4c09-960e-eefa47a20392" name="Cleaned up. Removed redundant import." comment="Added Challenge 4, did some refactoring there." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1uk9KM2wPQYBeYD8EJSsV4fbrhF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="stg.challenges" />
+      <recent name="challenge5" />
+      <recent name="challenge4" />
+      <recent name="challenge3" />
+      <recent name="challenge2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.Challenge5">
+    <configuration name="Challenge2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="stgwebauto-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stg.challenges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="stg.challenges" />
+      <option name="MAIN_CLASS_NAME" value="stg.challenges.Challenge2" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Challenge3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="stgwebauto-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stg.challenges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="stg.challenges" />
+      <option name="MAIN_CLASS_NAME" value="stg.challenges.Challenge3" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Challenge3.printListOfPopularModels" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="stgwebauto-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stg.challenges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="stg.challenges" />
+      <option name="MAIN_CLASS_NAME" value="stg.challenges.Challenge3" />
+      <option name="METHOD_NAME" value="printListOfPopularModels" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Challenge4.fibonacciSequencing" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="stgwebauto-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stg.challenges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="stg.challenges" />
+      <option name="MAIN_CLASS_NAME" value="stg.challenges.Challenge4" />
+      <option name="METHOD_NAME" value="fibonacciSequencing" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Challenge5" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="stgwebauto-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stg.challenges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="stg.challenges" />
+      <option name="MAIN_CLASS_NAME" value="stg.challenges.Challenge5" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.Challenge5" />
+        <item itemvalue="TestNG.Challenge4.fibonacciSequencing" />
+        <item itemvalue="TestNG.Challenge3" />
+        <item itemvalue="TestNG.Challenge2" />
+        <item itemvalue="TestNG.Challenge3.printListOfPopularModels" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c75c561-71d8-4aa2-b0e9-cd80721b2dd9" name="Default Changelist" comment="" />
+      <changelist id="8728f6f5-d52b-4c09-960e-eefa47a20392" name="Cleaned up. Removed redundant import." comment="" />
+      <created>1625198656949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625198656949</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Adding Challenge1 and Challenge2 to the repo.">
+      <created>1625208073641</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1625208073641</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Some minor changes to Challenge2. Added Challenge3.">
+      <created>1625248659984</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1625248659984</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Cleaned up. Removed redundant import.">
+      <created>1625248863213</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625248863213</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Cleaned up. Removed redundant import.">
+      <created>1625256988567</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1625256988567</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Challenge 4, did some refactoring there.">
+      <created>1625257196818</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625257196818</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Challenge 5 Work in progress. Before some restructure.">
+      <created>1625432202955</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625432202955</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Challenge 5 Work in progress. After restructure.">
+      <created>1625450176373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625450176373</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Challenge 5 Completed. Getting ready for the Challenge 6.">
+      <created>1625947738109</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625947738109</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Challenge 6 Work in Progress...">
+      <created>1625953022457</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625953022457</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Challenge 6 completed, Challenge 7 is the next">
+      <created>1625968788069</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1625968788069</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Minor change to Challenge 6, refactored methods to Helpers class">
+      <created>1626001844836</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1626001844836</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Imports optimized in Challenge 6">
+      <created>1626001895229</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1626001895229</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Helpers methods made static, Challenge 6 refactored to use those.">
+      <created>1626002166218</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1626002166218</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Continue working on the Challenge 7... implementing asserts. See TODO.">
+      <created>1626029934850</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1626029934850</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Done with Challenge 7. Will be working on the Advanced challenges starting with Challenge 8">
+      <created>1626046055392</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1626046055392</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Done with Challenge 8. Added Unirest to send requests to the pom.">
+      <created>1626095673459</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1626095673459</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added a check for Server response 200 to Challenge 8">
+      <created>1626180542674</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1626180542674</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Challenge 9 Work In Progress">
+      <created>1627245184098</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1627245184098</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Challenge 9 Work In Progress - So far getting cookies from Selenium using them in RestAssured later. Solution works, now need to parse the response.">
+      <created>1627265713383</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1627265713383</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Challenge 9 Completed! Starting with Challenge 10 next.">
+      <created>1627350314959</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1627350314959</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Challenge 9 - Reworked using Unirest library instead of RestAssured Starting with Challenge 10 next.">
+      <created>1627440924781</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1627440924781</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Challenge 10 - Started. Worked on how to parse .csv files. Next step - Data Provider">
+      <created>1627697919774</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1627697919775</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Challenge 10 - Started. Added a test with DataProvider. &#10;Next step is to write actual test using that.&#10;I have an idea to try the same thing with JUnit.">
+      <created>1627744274082</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1627744274082</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Minor things cleaned in Challenge 3 and 5&#10;Challenge 10 - Started. Added a test with DataProvider.&#10;Next step is to write actual test using that.&#10;I have an idea to try the same thing with JUnit.">
+      <created>1627783629960</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1627783629960</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Adding Challenge1 and Challenge2 to the repo." />
+    <MESSAGE value="Some minor changes to Challenge2. Added Challenge3." />
+    <MESSAGE value="Cleaned up. Removed redundant import." />
+    <MESSAGE value="Added challenge 4 did some minor refactoring there" />
+    <MESSAGE value="Added Challenge 4, did some refactoring there." />
+    <MESSAGE value="Challenge 5 Work in progress. Before some restructure." />
+    <MESSAGE value="Challenge 5 Work in progress. After restructure." />
+    <MESSAGE value="Challenge 5 Completed. Getting ready for the Challenge 6." />
+    <MESSAGE value="Challenge 6 Work in Progress..." />
+    <MESSAGE value="Challenge 6 completed, Challenge 7 is the next" />
+    <MESSAGE value="Minor change to Challenge 6, refactored methods to Helpers class" />
+    <MESSAGE value="Imports optimized in Challenge 6" />
+    <MESSAGE value="Helpers methods made static, Challenge 6 refactored to use those." />
+    <MESSAGE value="Continue working on the Challenge 7... implementing asserts. See TODO." />
+    <MESSAGE value="Done with Challenge 7. Will be working on the Advanced challenges starting with Challenge 8" />
+    <MESSAGE value="Done with Challenge 8. Added Unirest to send requests to the pom." />
+    <MESSAGE value="Added a check for Server response 200 to Challenge 8" />
+    <MESSAGE value="Challenge 9 Work In Progress" />
+    <MESSAGE value="Challenge 9 Work In Progress - So far getting cookies from Selenium using them in RestAssured later. Solution works, now need to parse the response." />
+    <MESSAGE value="Challenge 9 Completed! Starting with Challenge 10 next." />
+    <MESSAGE value="Challenge 9 - Reworked using Unirest library instead of RestAssured Starting with Challenge 10 next." />
+    <MESSAGE value="Challenge 10 - Started. Worked on how to parse .csv files. Next step - Data Provider" />
+    <MESSAGE value="Challenge 10 - Started. Added a test with DataProvider. &#10;Next step is to write actual test using that.&#10;I have an idea to try the same thing with JUnit." />
+    <MESSAGE value="Minor things cleaned in Challenge 3 and 5&#10;Challenge 10 - Started. Added a test with DataProvider.&#10;Next step is to write actual test using that.&#10;I have an idea to try the same thing with JUnit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor things cleaned in Challenge 3 and 5&#10;Challenge 10 - Started. Added a test with DataProvider.&#10;Next step is to write actual test using that.&#10;I have an idea to try the same thing with JUnit." />
+  </component>
+</project>
